@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bimahlh6furng"
+
+[deps]
+
+files=["res://Assets/Texts/letters_translations/letters_texts.es_ES.translation", "res://Assets/Texts/letters_translations/letters_texts.en_EN.translation"]
+
+source_file="res://Assets/Texts/letters_translations/letters_texts.csv"
+dest_files=["res://Assets/Texts/letters_translations/letters_texts.es_ES.translation", "res://Assets/Texts/letters_translations/letters_texts.en_EN.translation"]
+
+[params]
+
+compress=true
+delimiter=0

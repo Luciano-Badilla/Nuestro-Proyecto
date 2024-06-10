@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://wb5n2lpkshlj"]
+
+[ext_resource type="Script" path="res://Scenes/Common/library.gd" id="1_o4dx0"]
+[ext_resource type="Texture2D" uid="uid://bdsl2wrf0u1ik" path="res://Assets/Graphics/Sprites/Objects/library.png" id="2_fqjdm"]
+[ext_resource type="PackedScene" uid="uid://bte700uxprxk8" path="res://Scenes/Common/interaction_particle.tscn" id="3_em2sk"]
+[ext_resource type="Texture2D" uid="uid://h30uutk8q0fw" path="res://Assets/Graphics/Sprites/Objects/library1.png" id="3_uk1mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4byw"]
+size = Vector2(97, 152)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rdgv"]
+atlas = ExtResource("2_fqjdm")
+region = Rect2(0, 0, 99, 153)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae5ke"]
+atlas = ExtResource("3_uk1mn")
+region = Rect2(0, 0, 99, 153)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg577"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rdgv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae5ke")
+}],
+"loop": true,
+"name": &"open",
+"speed": 0.0
+}]
+
+[node name="library" type="Node2D" groups=["library"]]
+texture_filter = 1
+script = ExtResource("1_o4dx0")
+
+[node name="area" type="Area2D" parent="." groups=["interactable_area"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_m4byw")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pg577")
+
+[node name="interaction_particle" parent="." instance=ExtResource("3_em2sk")]
+
+[connection signal="area_entered" from="area" to="." method="_on_library_area_area_entered"]
+[connection signal="area_exited" from="area" to="." method="_on_library_area_area_exited"]
+[connection signal="input_event" from="area" to="." method="_on_library_area_input_event"]
+
+[editable path="interaction_particle"]

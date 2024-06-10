@@ -1,0 +1,877 @@
+[gd_scene load_steps=56 format=3 uid="uid://dpj1o6khftw6j"]
+
+[ext_resource type="Texture2D" uid="uid://bteo2hl5we6t0" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/library_ui.png" id="1_d8rvw"]
+[ext_resource type="Script" path="res://Scenes/UI/library_ui/library_ui.gd" id="1_yollv"]
+[ext_resource type="Texture2D" uid="uid://xv0jvbybonj6" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/purple_book.png" id="2_0ab4n"]
+[ext_resource type="Script" path="res://Scenes/UI/library_ui/book.gd" id="2_3f1xq"]
+[ext_resource type="Script" path="res://Scenes/UI/library_ui/purple_books.gd" id="2_fd23f"]
+[ext_resource type="Texture2D" uid="uid://var3stvl7spu" path="res://Assets/Graphics/transparent.png" id="3_gab63"]
+[ext_resource type="Script" path="res://Scenes/UI/library_ui/green_books.gd" id="6_cvlww"]
+[ext_resource type="Texture2D" uid="uid://cdhbdj8lkrik2" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/green_book.png" id="6_wyr3n"]
+[ext_resource type="Script" path="res://Scenes/UI/library_ui/blue_books.gd" id="8_arrmh"]
+[ext_resource type="Texture2D" uid="uid://bkpe0pt77iwxy" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/blue_book.png" id="9_a46hb"]
+[ext_resource type="Texture2D" uid="uid://kun1dvs60lgi" path="res://Assets/Graphics/UI/close_button.png" id="11_bo0n4"]
+[ext_resource type="Texture2D" uid="uid://dc4dycw3yacuq" path="res://Assets/Graphics/UI/black_transparent_background.png" id="12_y7neq"]
+[ext_resource type="Texture2D" uid="uid://c7lubgvcneiwe" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/library_ui1.png" id="13_nurri"]
+[ext_resource type="Texture2D" uid="uid://dkediqsaondml" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/key.png" id="14_8itlh"]
+[ext_resource type="AudioStream" uid="uid://bfb0j18nc8l7m" path="res://Assets/Audio/SFX/library/openSafeBox.mp3" id="15_ptn8v"]
+[ext_resource type="AudioStream" uid="uid://dmyg3sium5rjm" path="res://Assets/Audio/SFX/library/takeKey.mp3" id="16_3be8e"]
+[ext_resource type="AudioStream" uid="uid://c252bvjhvgck3" path="res://Assets/Audio/SFX/library/bookPush.mp3" id="17_jntyq"]
+[ext_resource type="Texture2D" uid="uid://cv6uplsp4u582" path="res://Assets/Graphics/Sprites/Lights/PNG (Transparent)/flare_01.png" id="18_6qj61"]
+[ext_resource type="Texture2D" uid="uid://70rbv7f8ljlw" path="res://Assets/Graphics/Sprites/Levels/Level_1/objects_ui/candleFlame.png" id="19_paas6"]
+[ext_resource type="Texture2D" uid="uid://bfm8fy6ae8fek" path="res://Assets/Graphics/UI/black_background.png" id="20_hew6h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvjut"]
+atlas = ExtResource("2_0ab4n")
+region = Rect2(0, 0, 35, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn6wy"]
+atlas = ExtResource("2_0ab4n")
+region = Rect2(35, 0, 35, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rgoak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvjut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn6wy")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cqqs"]
+atlas = ExtResource("6_wyr3n")
+region = Rect2(0, 0, 35, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p067t"]
+atlas = ExtResource("6_wyr3n")
+region = Rect2(35, 0, 35, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6h2ia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cqqs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p067t")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myukw"]
+atlas = ExtResource("9_a46hb")
+region = Rect2(0, 0, 35, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlbah"]
+atlas = ExtResource("9_a46hb")
+region = Rect2(35, 0, 35, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4sil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myukw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlbah")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qejji"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackFade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gn7jj"]
+resource_name = "blackFadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackFade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ftrc0"]
+resource_name = "blackFadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackFade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4wx85"]
+_data = {
+"RESET": SubResource("Animation_qejji"),
+"blackFadeIn": SubResource("Animation_gn7jj"),
+"blackFadeOut": SubResource("Animation_ftrc0")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l1fl"]
+atlas = ExtResource("11_bo0n4")
+region = Rect2(9, 11, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekkm2"]
+atlas = ExtResource("11_bo0n4")
+region = Rect2(49, 11, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvyl5"]
+atlas = ExtResource("19_paas6")
+region = Rect2(0, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1ruq"]
+atlas = ExtResource("19_paas6")
+region = Rect2(13, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhj3f"]
+atlas = ExtResource("19_paas6")
+region = Rect2(26, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8myvk"]
+atlas = ExtResource("19_paas6")
+region = Rect2(39, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ohne"]
+atlas = ExtResource("19_paas6")
+region = Rect2(52, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaj5j"]
+atlas = ExtResource("19_paas6")
+region = Rect2(65, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78tty"]
+atlas = ExtResource("19_paas6")
+region = Rect2(78, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdred"]
+atlas = ExtResource("19_paas6")
+region = Rect2(91, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4r7j"]
+atlas = ExtResource("19_paas6")
+region = Rect2(104, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owkvd"]
+atlas = ExtResource("19_paas6")
+region = Rect2(117, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3p4m"]
+atlas = ExtResource("19_paas6")
+region = Rect2(130, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3n0y"]
+atlas = ExtResource("19_paas6")
+region = Rect2(143, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnbyf"]
+atlas = ExtResource("19_paas6")
+region = Rect2(156, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ktdp"]
+atlas = ExtResource("19_paas6")
+region = Rect2(169, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmw0r"]
+atlas = ExtResource("19_paas6")
+region = Rect2(182, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coyly"]
+atlas = ExtResource("19_paas6")
+region = Rect2(195, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smb0u"]
+atlas = ExtResource("19_paas6")
+region = Rect2(208, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1dqr"]
+atlas = ExtResource("19_paas6")
+region = Rect2(221, 0, 13, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhxx8"]
+atlas = ExtResource("19_paas6")
+region = Rect2(234, 0, 13, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3hny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvyl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1ruq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhj3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8myvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ohne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaj5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78tty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdred")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4r7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owkvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3p4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3n0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnbyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ktdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmw0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_coyly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smb0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1dqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhxx8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="libraryUI" type="Control" groups=["UI"]]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.5
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yollv")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(577, 332.5)
+scale = Vector2(1184, 685)
+texture = ExtResource("12_y7neq")
+
+[node name="librarySprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(572, 327)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_d8rvw")
+
+[node name="books" type="Node2D" parent="."]
+position = Vector2(572, 327)
+scale = Vector2(0.95, 0.95)
+
+[node name="purple_books" type="Node2D" parent="books"]
+script = ExtResource("2_fd23f")
+
+[node name="book1" type="Node2D" parent="books/purple_books"]
+position = Vector2(-135, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book1"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book1"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book2" type="Node2D" parent="books/purple_books"]
+position = Vector2(-108, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book2"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book2"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book3" type="Node2D" parent="books/purple_books"]
+position = Vector2(-81, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book3"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book3"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book4" type="Node2D" parent="books/purple_books"]
+position = Vector2(-54, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book4"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book4"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book5" type="Node2D" parent="books/purple_books"]
+position = Vector2(-27, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book5"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book5"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book6" type="Node2D" parent="books/purple_books"]
+position = Vector2(0, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book6"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book6"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book7" type="Node2D" parent="books/purple_books"]
+position = Vector2(27, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book7"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book7"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book8" type="Node2D" parent="books/purple_books"]
+position = Vector2(54, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book8"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book8"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book9" type="Node2D" parent="books/purple_books"]
+position = Vector2(81, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book9"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book9"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book10" type="Node2D" parent="books/purple_books"]
+position = Vector2(108, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book10"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book10"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book11" type="Node2D" parent="books/purple_books"]
+position = Vector2(135, -161)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/purple_books/book11"]
+sprite_frames = SubResource("SpriteFrames_rgoak")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/purple_books/book11"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="green_books" type="Node2D" parent="books"]
+script = ExtResource("6_cvlww")
+
+[node name="book1" type="Node2D" parent="books/green_books"]
+position = Vector2(-135, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book1"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book1"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book2" type="Node2D" parent="books/green_books"]
+position = Vector2(-108, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book2"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book2"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book3" type="Node2D" parent="books/green_books"]
+position = Vector2(-81, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book3"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book3"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book4" type="Node2D" parent="books/green_books"]
+position = Vector2(-54, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book4"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book4"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book5" type="Node2D" parent="books/green_books"]
+position = Vector2(-27, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book5"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book5"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book6" type="Node2D" parent="books/green_books"]
+position = Vector2(0, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book6"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book6"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book7" type="Node2D" parent="books/green_books"]
+position = Vector2(27, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book7"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book7"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book8" type="Node2D" parent="books/green_books"]
+position = Vector2(54, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book8"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book8"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book9" type="Node2D" parent="books/green_books"]
+position = Vector2(81, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book9"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book9"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book10" type="Node2D" parent="books/green_books"]
+position = Vector2(108, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book10"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book10"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book11" type="Node2D" parent="books/green_books"]
+position = Vector2(135, 75)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/green_books/book11"]
+sprite_frames = SubResource("SpriteFrames_6h2ia")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/green_books/book11"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="blue_books" type="Node2D" parent="books"]
+script = ExtResource("8_arrmh")
+
+[node name="book1" type="Node2D" parent="books/blue_books"]
+position = Vector2(-135, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book1"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book1"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book2" type="Node2D" parent="books/blue_books"]
+position = Vector2(-108, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book2"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book2"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book3" type="Node2D" parent="books/blue_books"]
+position = Vector2(-81, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book3"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book3"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book4" type="Node2D" parent="books/blue_books"]
+position = Vector2(-54, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book4"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book4"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book5" type="Node2D" parent="books/blue_books"]
+position = Vector2(-27, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book5"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book5"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book6" type="Node2D" parent="books/blue_books"]
+position = Vector2(0, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book6"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book6"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book7" type="Node2D" parent="books/blue_books"]
+position = Vector2(27, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book7"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book7"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book8" type="Node2D" parent="books/blue_books"]
+position = Vector2(54, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book8"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book8"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book9" type="Node2D" parent="books/blue_books"]
+position = Vector2(81, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book9"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book9"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book10" type="Node2D" parent="books/blue_books"]
+position = Vector2(108, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book10"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book10"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="book11" type="Node2D" parent="books/blue_books"]
+position = Vector2(135, 158)
+script = ExtResource("2_3f1xq")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="books/blue_books/book11"]
+sprite_frames = SubResource("SpriteFrames_e4sil")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="books/blue_books/book11"]
+position = Vector2(-11, -28)
+scale = Vector2(21, 61)
+texture_normal = ExtResource("3_gab63")
+
+[node name="openBox" type="Node2D" parent="."]
+visible = false
+position = Vector2(574.124, 327.067)
+scale = Vector2(0.95, 0.95)
+
+[node name="boxSprite" type="Sprite2D" parent="openBox"]
+texture_filter = 1
+position = Vector2(-4.47498, -46.57)
+scale = Vector2(1, 0.954545)
+texture = ExtResource("13_nurri")
+
+[node name="keySprite" type="TouchScreenButton" parent="openBox"]
+texture_filter = 1
+position = Vector2(-23, -43.675)
+texture_normal = ExtResource("14_8itlh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4wx85")
+}
+
+[node name="openSafeBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ptn8v")
+
+[node name="takeKey" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_3be8e")
+
+[node name="pushBook" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_jntyq")
+
+[node name="CanvasLayer" type="CanvasModulate" parent="."]
+color = Color(0.294118, 0.423529, 0.792157, 1)
+
+[node name="candleLight" type="PointLight2D" parent="."]
+z_as_relative = false
+position = Vector2(691.13, 278.71)
+scale = Vector2(2, 2)
+color = Color(1, 0.85098, 0, 1)
+energy = 3.38
+range_z_min = 0
+range_layer_max = 1
+shadow_enabled = true
+texture = ExtResource("18_6qj61")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer2"]
+texture_filter = 1
+position = Vector2(927, 119.5)
+scale = Vector2(1.5, 1.5)
+texture_normal = SubResource("AtlasTexture_6l1fl")
+texture_pressed = SubResource("AtlasTexture_ekkm2")
+
+[node name="candleFlame" type="AnimatedSprite2D" parent="."]
+position = Vector2(692, 280.5)
+sprite_frames = SubResource("SpriteFrames_i3hny")
+autoplay = "default"
+frame_progress = 0.666352
+
+[node name="BlackFade" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(578.12, 325.01)
+scale = Vector2(1177.76, 672.981)
+texture = ExtResource("20_hew6h")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.09
+autostart = true
+
+[connection signal="released" from="books/purple_books/book1/TouchScreenButton" to="books/purple_books/book1" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book2/TouchScreenButton" to="books/purple_books/book2" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book3/TouchScreenButton" to="books/purple_books/book3" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book4/TouchScreenButton" to="books/purple_books/book4" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book5/TouchScreenButton" to="books/purple_books/book5" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book6/TouchScreenButton" to="books/purple_books/book6" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book7/TouchScreenButton" to="books/purple_books/book7" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book8/TouchScreenButton" to="books/purple_books/book8" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book9/TouchScreenButton" to="books/purple_books/book9" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book10/TouchScreenButton" to="books/purple_books/book10" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/purple_books/book11/TouchScreenButton" to="books/purple_books/book11" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book1/TouchScreenButton" to="books/green_books/book1" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book2/TouchScreenButton" to="books/green_books/book2" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book3/TouchScreenButton" to="books/green_books/book3" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book4/TouchScreenButton" to="books/green_books/book4" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book5/TouchScreenButton" to="books/green_books/book5" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book6/TouchScreenButton" to="books/green_books/book6" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book7/TouchScreenButton" to="books/green_books/book7" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book8/TouchScreenButton" to="books/green_books/book8" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book9/TouchScreenButton" to="books/green_books/book9" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book10/TouchScreenButton" to="books/green_books/book10" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/green_books/book11/TouchScreenButton" to="books/green_books/book11" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book1/TouchScreenButton" to="books/blue_books/book1" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book2/TouchScreenButton" to="books/blue_books/book2" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book3/TouchScreenButton" to="books/blue_books/book3" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book4/TouchScreenButton" to="books/blue_books/book4" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book5/TouchScreenButton" to="books/blue_books/book5" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book6/TouchScreenButton" to="books/blue_books/book6" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book7/TouchScreenButton" to="books/blue_books/book7" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book8/TouchScreenButton" to="books/blue_books/book8" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book9/TouchScreenButton" to="books/blue_books/book9" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book10/TouchScreenButton" to="books/blue_books/book10" method="_on_touch_screen_button_released"]
+[connection signal="released" from="books/blue_books/book11/TouchScreenButton" to="books/blue_books/book11" method="_on_touch_screen_button_released"]
+[connection signal="released" from="openBox/keySprite" to="." method="_on_sprite_2d_4_released"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="openSafeBox" to="." method="_on_open_safe_box_finished"]
+[connection signal="released" from="CanvasLayer2/TouchScreenButton" to="." method="_on_touch_screen_button_released"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

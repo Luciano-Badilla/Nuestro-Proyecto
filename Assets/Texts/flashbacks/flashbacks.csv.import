@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cr8hjirg2jp0m"
+
+[deps]
+
+files=["res://Assets/Texts/flashbacks/flashbacks.es_ES.translation", "res://Assets/Texts/flashbacks/flashbacks.en_EN.translation"]
+
+source_file="res://Assets/Texts/flashbacks/flashbacks.csv"
+dest_files=["res://Assets/Texts/flashbacks/flashbacks.es_ES.translation", "res://Assets/Texts/flashbacks/flashbacks.en_EN.translation"]
+
+[params]
+
+compress=true
+delimiter=0

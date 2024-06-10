@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://b68snod1f4o33"]
+
+[ext_resource type="Texture2D" uid="uid://s3j5agruur5e" path="res://Content/Assets/Graphics/UI/itemBox.jpg" id="1_7ho4g"]
+[ext_resource type="Script" path="res://Content/Scenes/UI/inventory/items/items.gd" id="2_aiqjh"]
+[ext_resource type="Texture2D" uid="uid://dne6vqpwwave5" path="res://Content/Assets/Graphics/Sprites/Objects/letter0_item.png" id="3_0ce5k"]
+[ext_resource type="Texture2D" uid="uid://bcoiybisy32un" path="res://Content/Assets/Graphics/UI/itemBoxPlayerInventory.jpg" id="3_1mjk2"]
+[ext_resource type="FontFile" uid="uid://dmrxpkx46i6w" path="res://Content/Assets/Fonts/Heavitas.ttf" id="4_4smyn"]
+[ext_resource type="Texture2D" uid="uid://ds33q0avbq1fl" path="res://Content/Assets/Graphics/Sprites/Objects/painkill_item.png" id="4_d0rsp"]
+
+[node name="items" type="TextureButton"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -681.0
+offset_bottom = -618.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_aiqjh")
+playerInventory = ExtResource("3_1mjk2")
+container = ExtResource("1_7ho4g")
+idTextures = Array[CompressedTexture2D]([ExtResource("3_0ce5k"), ExtResource("4_d0rsp")])
+idTexts = Array[String](["KEY0_letterItem", "KEY1_painkillerItem"])
+
+[node name="textureItem" type="Sprite2D" parent="."]
+position = Vector2(23, 12)
+
+[node name="nameItem" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 8.675
+offset_right = 463.0
+offset_bottom = 34.675
+theme_override_fonts/font = ExtResource("4_4smyn")
+text = " "
+text_overrun_behavior = 3
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

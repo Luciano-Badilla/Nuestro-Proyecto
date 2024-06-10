@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://b68snod1f4o33"]
+
+[ext_resource type="Script" path="res://Scenes/UI/inventory/items/items.gd" id="2_aiqjh"]
+[ext_resource type="Texture2D" uid="uid://n67ybkqp3nbp" path="res://Assets/Graphics/UI/itemBoxInv.png" id="2_ji5vi"]
+[ext_resource type="Texture2D" uid="uid://dne6vqpwwave5" path="res://Assets/Graphics/Sprites/Objects/safeBoxLetter_item.png" id="4_fylwd"]
+[ext_resource type="Texture2D" uid="uid://ds33q0avbq1fl" path="res://Assets/Graphics/Sprites/Objects/sanityPill_item.png" id="5_yvwcc"]
+[ext_resource type="Texture2D" uid="uid://bgxmpbtjpy23p" path="res://Assets/Graphics/Sprites/Objects/key0_item.png" id="6_cjae1"]
+[ext_resource type="Texture2D" uid="uid://cud01256jm1pn" path="res://Assets/Graphics/Sprites/Objects/sanityPillLetter_item.png" id="7_0qxmu"]
+[ext_resource type="Texture2D" uid="uid://bqfnoxxe6oeex" path="res://Assets/Graphics/Sprites/Objects/fragment_photo_item.png" id="8_8018r"]
+[ext_resource type="Texture2D" uid="uid://bf5cj5s87pb8x" path="res://Assets/Graphics/UI/itemBoxInv2.png" id="9_ivo4i"]
+[ext_resource type="FontFile" uid="uid://b8kxc2chawiw1" path="res://Assets/Fonts/mainFont.ttf" id="10_7wd8c"]
+[ext_resource type="AudioStream" uid="uid://ctbt1gy6gpysi" path="res://Assets/Audio/SFX/UI/grabItem.wav" id="10_tox17"]
+[ext_resource type="AudioStream" uid="uid://c8ey60kpfl1dd" path="res://Assets/Audio/SFX/paper/openLetter.mp3" id="11_asf51"]
+[ext_resource type="AudioStream" uid="uid://d35xfn4j5nh57" path="res://Assets/Audio/SFX/UI/tookPills.ogg" id="12_2unvo"]
+
+[sub_resource type="Animation" id="Animation_ad7r0"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2qbuw"]
+resource_name = "queefreeAnimation"
+length = 0.6445
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("audio/click:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cl5hh"]
+resource_name = "queefreeAnimationNoSound"
+length = 1.0035
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivmw5"]
+_data = {
+"RESET": SubResource("Animation_ad7r0"),
+"queefreeAnimation": SubResource("Animation_2qbuw"),
+"queefreeAnimationNoSound": SubResource("Animation_cl5hh")
+}
+
+[node name="items" type="TextureButton" groups=["item_node"]]
+modulate = Color(0.550293, 0.550293, 0.550293, 1)
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1084.0
+offset_bottom = -630.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("2_ji5vi")
+script = ExtResource("2_aiqjh")
+playerInventory = ExtResource("2_ji5vi")
+container = ExtResource("2_ji5vi")
+idIconTextures = Array[CompressedTexture2D]([ExtResource("4_fylwd"), ExtResource("5_yvwcc"), ExtResource("6_cjae1"), ExtResource("7_0qxmu"), ExtResource("8_8018r")])
+idNameTexts = Array[String](["KEY0_letterItem", "KEY1_sanitypillItem", "KEY2_key0Item", "KEY3_sanityPillLetterItem", "KEY4_photoFragment"])
+idLetterTexts = Array[String](["KEY0_letter0", "", "", "KEY0_letter1", ""])
+idSubTexts = Array[Array]([["KEY0_dialogue0", "KEY0_dialogue1", "KEY0_dialogue2", "KEY0_dialogue3"], ["KEY0_dialogue10"], ["KEY0_dialogue11"], ["KEY0_dialogue4", "KEY0_dialogue5", "KEY0_dialogue6", "KEY0_dialogue7", "KEY0_dialogue8"], ["KEY0_dialogue9"]])
+nonUsedItems = Array[int]([0, 3])
+readItems = Array[int]([0, 3])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(151, 18.5)
+texture = ExtResource("9_ivo4i")
+
+[node name="textureItem" type="Sprite2D" parent="."]
+position = Vector2(23, 17.01)
+
+[node name="nameItem" type="Label" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 45.0
+offset_top = 6.0
+offset_right = 297.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("10_7wd8c")
+theme_override_font_sizes/font_size = 22
+text_overrun_behavior = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ivmw5")
+}
+
+[node name="audio" type="Node" parent="."]
+
+[node name="click" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("10_tox17")
+
+[node name="letter" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("11_asf51")
+
+[node name="tookPills" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("12_2unvo")
+volume_db = 6.19
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

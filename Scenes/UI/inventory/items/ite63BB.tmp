@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b68snod1f4o33"]
+
+[ext_resource type="Texture2D" uid="uid://s3j5agruur5e" path="res://Content/Assets/Graphics/UI/dialogueBox.jpg" id="1_7ho4g"]
+[ext_resource type="Script" path="res://Content/Scenes/UI/inventory/items/items.gd" id="2_aiqjh"]
+[ext_resource type="Texture2D" uid="uid://dne6vqpwwave5" path="res://Content/Assets/Graphics/Sprites/Objects/letter1_item.png" id="2_dppen"]
+
+[node name="items" type="TextureButton"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -681.0
+offset_bottom = -618.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("1_7ho4g")
+script = ExtResource("2_aiqjh")
+idTextures = Array[CompressedTexture2D]([ExtResource("2_dppen")])
+idTexts = Array[String](["KEY0_letterItem0"])
+
+[node name="textureItem" type="Sprite2D" parent="."]
+position = Vector2(23, 12)
+
+[node name="nameItem" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 2.0
+offset_right = 463.0
+offset_bottom = 28.0
+text_overrun_behavior = 3

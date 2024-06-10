@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://byqs4nagd3mpt"
+
+[deps]
+
+files=["res://Assets/Texts/dialogues_translations/dialogues_translations.es_ES.translation", "res://Assets/Texts/dialogues_translations/dialogues_translations.en_EN.translation"]
+
+source_file="res://Assets/Texts/dialogues_translations/dialogues_translations.csv"
+dest_files=["res://Assets/Texts/dialogues_translations/dialogues_translations.es_ES.translation", "res://Assets/Texts/dialogues_translations/dialogues_translations.en_EN.translation"]
+
+[params]
+
+compress=true
+delimiter=0

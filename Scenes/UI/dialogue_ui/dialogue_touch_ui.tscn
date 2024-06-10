@@ -1,0 +1,179 @@
+[gd_scene load_steps=18 format=3 uid="uid://wclc6xeb8kti"]
+
+[ext_resource type="Script" path="res://Scenes/UI/dialogue_ui/dialogue_touch_ui.gd" id="1_qlvjl"]
+[ext_resource type="Texture2D" uid="uid://c03j2dpe8nsjs" path="res://Assets/Graphics/UI/dialogue_ui.png" id="2_juht1"]
+[ext_resource type="FontFile" uid="uid://b8kxc2chawiw1" path="res://Assets/Fonts/mainFont.ttf" id="3_pf6g1"]
+[ext_resource type="Texture2D" uid="uid://cmibnkggp4434" path="res://Assets/Graphics/UI/touchDialogue.png" id="4_yeeu4"]
+[ext_resource type="Texture2D" uid="uid://cvnaw8tom8g6n" path="res://Assets/Graphics/UI/touchDialogue2.png" id="5_sol7t"]
+
+[sub_resource type="FontVariation" id="FontVariation_i8ye6"]
+base_font = ExtResource("3_pf6g1")
+
+[sub_resource type="Animation" id="Animation_xxhma"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kulma"]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v70rj"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15ad6"]
+_data = {
+"RESET": SubResource("Animation_xxhma"),
+"fade": SubResource("Animation_kulma"),
+"fade_out": SubResource("Animation_v70rj")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmr5p"]
+atlas = ExtResource("4_yeeu4")
+region = Rect2(8, 0, 8, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50tii"]
+atlas = ExtResource("4_yeeu4")
+region = Rect2(0, 0, 8, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ok5t"]
+atlas = ExtResource("5_sol7t")
+region = Rect2(13, 0, 13, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anm0n"]
+atlas = ExtResource("5_sol7t")
+region = Rect2(0, 0, 13, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fewr"]
+atlas = ExtResource("5_sol7t")
+region = Rect2(13, 0, 13, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f3el"]
+atlas = ExtResource("5_sol7t")
+region = Rect2(26, 0, 13, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhpa7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmr5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50tii")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ok5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anm0n")
+}],
+"loop": true,
+"name": &"default2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fewr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f3el")
+}],
+"loop": true,
+"name": &"default3",
+"speed": 3.0
+}]
+
+[node name="dialogue_touch_ui" type="Control" groups=["dialogue_touch", "dialogue_touch_ui"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+script = ExtResource("1_qlvjl")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogueSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -54.77)
+scale = Vector2(4.395, 3.5)
+texture = ExtResource("2_juht1")
+
+[node name="TextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -269.0
+offset_top = -96.0
+offset_right = 288.0
+offset_bottom = -8.0
+theme_override_fonts/normal_font = SubResource("FontVariation_i8ye6")
+theme_override_font_sizes/normal_font_size = 25
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="visibleCharsTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="queuefree_timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_15ad6")
+}
+autoplay = "fade"
+
+[node name="touchIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(280.27, -27)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nhpa7")
+animation = &"default2"
+
+[connection signal="timeout" from="visibleCharsTimer" to="." method="_on_visible_chars_timer_timeout"]
+[connection signal="timeout" from="queuefree_timer" to="." method="_on_queuefree_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

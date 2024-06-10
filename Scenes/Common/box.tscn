@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlw8ivioqmbv1"]
+
+[ext_resource type="Script" path="res://Scenes/Common/box.gd" id="1_04xut"]
+[ext_resource type="Texture2D" uid="uid://b11d04gcdyc58" path="res://Assets/Graphics/Sprites/Objects/boxes.png" id="2_8s0vt"]
+[ext_resource type="PackedScene" uid="uid://bte700uxprxk8" path="res://Scenes/Common/interaction_particle.tscn" id="3_3luhh"]
+[ext_resource type="AudioStream" uid="uid://iboklrc4coyd" path="res://Assets/Audio/SFX/UI/openBox.ogg" id="4_1kvx4"]
+
+[node name="box" type="StaticBody2D" groups=["container"]]
+script = ExtResource("1_04xut")
+
+[node name="boxSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_8s0vt")
+region_enabled = true
+region_rect = Rect2(0, 1, 84, 58)
+
+[node name="boxArea" type="Area2D" parent="." groups=["interactable_area"]]
+
+[node name="interaction_particle" parent="." instance=ExtResource("3_3luhh")]
+position = Vector2(-13, -29)
+
+[node name="openBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1kvx4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="area_entered" from="boxArea" to="." method="_on_box_area_area_entered"]
+[connection signal="area_exited" from="boxArea" to="." method="_on_box_area_area_exited"]
+[connection signal="input_event" from="boxArea" to="." method="_on_box_area_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

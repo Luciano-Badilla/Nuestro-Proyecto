@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://drc4gaya0cwo1"]
+
+[ext_resource type="Gradient" uid="uid://clbjjwsu706wl" path="res://Scenes/UI/vital_signs/initialGradient.tres" id="1_mxh5i"]
+[ext_resource type="Gradient" uid="uid://clt785yp3rbwa" path="res://Scenes/UI/vital_signs/endGradient.tres" id="1_xlhqr"]
+[ext_resource type="Script" path="res://Scenes/UI/vital_signs/vitalSigns.gd" id="2_hppw8"]
+
+[node name="vitalSigns" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="." groups=["heartBeatMonitor"]]
+position = Vector2(35.4197, 323.205)
+width = 5.0
+gradient = ExtResource("1_mxh5i")
+begin_cap_mode = 1
+end_cap_mode = 1
+round_precision = 1
+script = ExtResource("2_hppw8")
+endGradient = ExtResource("1_xlhqr")
+
+[node name="Timer" type="Timer" parent="Line2D"]
+
+[connection signal="timeout" from="Line2D/Timer" to="Line2D" method="_on_timer_timeout"]

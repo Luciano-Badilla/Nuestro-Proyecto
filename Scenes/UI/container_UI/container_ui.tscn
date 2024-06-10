@@ -1,0 +1,144 @@
+[gd_scene load_steps=13 format=3 uid="uid://dddeeyubn6op4"]
+
+[ext_resource type="Script" path="res://Scenes/UI/container_UI/container_ui.gd" id="1_3lsld"]
+[ext_resource type="Texture2D" uid="uid://dc4dycw3yacuq" path="res://Assets/Graphics/UI/black_transparent_background.png" id="2_kptl8"]
+[ext_resource type="Texture2D" uid="uid://kun1dvs60lgi" path="res://Assets/Graphics/UI/close_button.png" id="4_81dbw"]
+[ext_resource type="Script" path="res://Scenes/UI/container_UI/hideScrollBars.gd" id="4_llgve"]
+[ext_resource type="PackedScene" uid="uid://b68snod1f4o33" path="res://Scenes/UI/inventory/items/items.tscn" id="4_ux6tw"]
+[ext_resource type="FontFile" uid="uid://b8kxc2chawiw1" path="res://Assets/Fonts/mainFont.ttf" id="6_h2e8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sg7m"]
+atlas = ExtResource("4_81dbw")
+region = Rect2(9, 11, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhdj0"]
+atlas = ExtResource("4_81dbw")
+region = Rect2(49, 11, 21, 20)
+
+[sub_resource type="Animation" id="Animation_kby1x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_14ns7"]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8yd8w"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gc3es"]
+_data = {
+"RESET": SubResource("Animation_kby1x"),
+"fade": SubResource("Animation_14ns7"),
+"fade_out": SubResource("Animation_8yd8w")
+}
+
+[node name="objectUI" type="Control" groups=["UI", "container_ui", "object_ui"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_3lsld")
+item = ExtResource("4_ux6tw")
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(578, 324)
+scale = Vector2(1186, 676)
+texture = ExtResource("2_kptl8")
+
+[node name="object" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(395.925, 326)
+scale = Vector2(3, 3)
+region_enabled = true
+
+[node name="closeButton" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(927, 115.895)
+scale = Vector2(1.5, 1.5)
+texture_normal = SubResource("AtlasTexture_7sg7m")
+texture_pressed = SubResource("AtlasTexture_uhdj0")
+
+[node name="inventoryContainer" type="ScrollContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 62.965
+offset_top = 195.0
+offset_right = 372.965
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+script = ExtResource("4_llgve")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="inventoryContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gc3es")
+}
+autoplay = "fade"
+
+[node name="emptyInvLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 677.18
+offset_top = 311.0
+offset_right = 1054.18
+offset_bottom = 358.0
+theme_override_fonts/normal_font = ExtResource("6_h2e8y")
+theme_override_font_sizes/normal_font_size = 25
+text = "KEY0_uiText0"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="released" from="closeButton" to="." method="_on_close_button_released"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

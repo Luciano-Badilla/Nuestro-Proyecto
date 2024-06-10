@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=3 uid="uid://bl6vbdkg2sqxm"]
+
+[ext_resource type="Script" path="res://Scenes/UI/letter_ui/letter_ui.gd" id="1_4vobj"]
+[ext_resource type="Texture2D" uid="uid://dc4dycw3yacuq" path="res://Assets/Graphics/UI/black_transparent_background.png" id="3_k73qj"]
+[ext_resource type="Texture2D" uid="uid://kun1dvs60lgi" path="res://Assets/Graphics/UI/close_button.png" id="3_m0a7s"]
+[ext_resource type="FontFile" uid="uid://dy6mjplcrwwtw" path="res://Assets/Fonts/horrendo.ttf" id="4_6kk5l"]
+[ext_resource type="AudioStream" uid="uid://c8ey60kpfl1dd" path="res://Assets/Audio/SFX/paper/openLetter.mp3" id="5_0nql1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i7nv"]
+atlas = ExtResource("3_m0a7s")
+region = Rect2(9, 11, 21, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf20j"]
+atlas = ExtResource("3_m0a7s")
+region = Rect2(49, 11, 21, 20)
+
+[sub_resource type="FontVariation" id="FontVariation_dvh03"]
+base_font = ExtResource("4_6kk5l")
+
+[sub_resource type="Animation" id="Animation_02mx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7cfsb"]
+resource_name = "fade"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0wkit"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1dhs"]
+_data = {
+"RESET": SubResource("Animation_02mx0"),
+"fade": SubResource("Animation_7cfsb"),
+"fade_out": SubResource("Animation_0wkit")
+}
+
+[node name="letter_template" type="Control" groups=["UI", "letter_ui"]]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -32.295
+offset_bottom = -32.295
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+script = ExtResource("1_4vobj")
+
+[node name="black_transparent_background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.49994, 10)
+scale = Vector2(1243, 722)
+texture = ExtResource("3_k73qj")
+
+[node name="letter" type="Sprite2D" parent="."]
+scale = Vector2(1.15, 1.15)
+
+[node name="close_button" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(199.69, -237.77)
+scale = Vector2(1.5, 1.5)
+texture_normal = SubResource("AtlasTexture_7i7nv")
+texture_pressed = SubResource("AtlasTexture_qf20j")
+
+[node name="text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -163.0
+offset_top = -184.0
+offset_right = 153.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0.449219, 0.234375, 0.0976563, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_dvh03")
+theme_override_font_sizes/normal_font_size = 17
+scroll_active = false
+context_menu_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h1dhs")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0nql1")
+
+[connection signal="released" from="close_button" to="." method="_on_texture_button_released"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

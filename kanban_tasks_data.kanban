@@ -1,0 +1,268 @@
+{
+	"categories": [
+		{
+			"uuid": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"title": "Task",
+			"color": "60e1ff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "7dd1c6f3-5f8d-4d3a-a44b-c8d5685b575b",
+			"title": "Todo",
+			"tasks": [
+				"0265c885-442d-4e49-b61b-ade260cf5f58",
+				"5b552d67-6b71-41de-92e7-1509041bd5e5",
+				"d875d54d-85b8-4850-99f6-3522edc209c2",
+				"17524403-ccda-4e55-bcd0-a55e617571e2",
+				"f7ddb161-4e50-49ab-9773-67f57068de4a",
+				"c8fc82b1-a2eb-4038-904d-ae0e175c064e"
+			]
+		},
+		{
+			"uuid": "dea612e1-89ba-4c3d-80f1-79840a53eee3",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "7948425f-c352-41dd-ad19-529cb7514273",
+			"title": "Done",
+			"tasks": [
+				"966c22a0-aeab-4297-93a9-aac595bac0ab",
+				"ec850d8e-fee6-4be8-8546-500ceb1f7321",
+				"d748ae2b-ec64-4854-a9bd-4da5a0575349",
+				"0154fdbd-069f-4e19-b572-096f618004cf",
+				"9cf6379b-b9fd-4e14-886b-00b3cc2c9f72",
+				"0d77648b-d327-4946-b86b-d5a15eab4171",
+				"3fa844f1-cab5-42e1-91c5-99cb7f0fe349",
+				"9b722b81-2483-40d2-8ce6-64244bbe88af",
+				"bc170636-cc94-4bd1-b5e5-cf82a33efba7",
+				"de6abd2a-eb07-4130-b5ea-40a6d9233235",
+				"58d7e530-38ae-4af8-848f-bc6e049b4106",
+				"f4b214d4-5938-4178-ab5b-d9b4e983255c",
+				"5e23301d-e285-4685-8bd2-704cc1c910f8",
+				"92484168-ba38-42ef-b75f-1eae4c5608d6",
+				"7d1aca1b-2ef2-4cb2-a7b3-2ea03d8bcc9c",
+				"e590011b-9ce4-4b87-9f0a-efa9e4d51481",
+				"e827ae91-3826-4952-beca-e47749ad5f2a",
+				"5fa1f0f9-1870-485f-bc7d-1aea13f35a67"
+			]
+		},
+		{
+			"uuid": "a63eef1b-9523-45c8-baa4-da9608b17197",
+			"title": "BUGS",
+			"tasks": []
+		},
+		{
+			"uuid": "81b3e4c8-3baf-42c4-9f4c-767089d5a7c1",
+			"title": "BUGS Fixed",
+			"tasks": [
+				"882aceb2-6077-4560-a9d5-114421bbce59",
+				"9be0feb8-8ce5-468e-b931-45e48ddd4c0d"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "966c22a0-aeab-4297-93a9-aac595bac0ab",
+			"title": "Alargar subtitulos",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "7d1aca1b-2ef2-4cb2-a7b3-2ea03d8bcc9c",
+			"title": "Hacer inventario personaje",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "92484168-ba38-42ef-b75f-1eae4c5608d6",
+			"title": "Arreglar bug que no puede interactuar",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "de6abd2a-eb07-4130-b5ea-40a6d9233235",
+			"title": "Agregar brillos objetos interactuables",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "0d77648b-d327-4946-b86b-d5a15eab4171",
+			"title": "Hacer un zoom",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "f4b214d4-5938-4178-ab5b-d9b4e983255c",
+			"title": "Cambiar fuentes dialogo y carta",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "0154fdbd-069f-4e19-b572-096f618004cf",
+			"title": "Combinacion 3 libros",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "3fa844f1-cab5-42e1-91c5-99cb7f0fe349",
+			"title": "Arreglar errores depuracion",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "bc170636-cc94-4bd1-b5e5-cf82a33efba7",
+			"title": "Mejorar interfaz containers",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "9cf6379b-b9fd-4e14-886b-00b3cc2c9f72",
+			"title": "Cambiar diseño inventarios",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "e827ae91-3826-4952-beca-e47749ad5f2a",
+			"title": "Cambiar X",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "d875d54d-85b8-4850-99f6-3522edc209c2",
+			"title": "Poner sonidos",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "5e23301d-e285-4685-8bd2-704cc1c910f8",
+			"title": "Poner llave",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "e590011b-9ce4-4b87-9f0a-efa9e4d51481",
+			"title": "Movimiento de la luz de la vela",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "5fa1f0f9-1870-485f-bc7d-1aea13f35a67",
+			"title": "Que se borre la linea adelante",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "d748ae2b-ec64-4854-a9bd-4da5a0575349",
+			"title": "Agregar Dialogos a inspecciones",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "0265c885-442d-4e49-b61b-ade260cf5f58",
+			"title": "Agregar sonidos de dialogos",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "882aceb2-6077-4560-a9d5-114421bbce59",
+			"title": "En los menuces e inv, se puede seguir abriendo submenuces",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "5b552d67-6b71-41de-92e7-1509041bd5e5",
+			"title": "Agregan boton de abrir inventario",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "58d7e530-38ae-4af8-848f-bc6e049b4106",
+			"title": "Cambiar seleccion a arriba del usado y no el primero",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "ec850d8e-fee6-4be8-8546-500ceb1f7321",
+			"title": "Cambiar a leer en el boton inspeccionar",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "9b722b81-2483-40d2-8ce6-64244bbe88af",
+			"title": "Agregar dialogos pildora, llave, y foto",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "9be0feb8-8ce5-468e-b931-45e48ddd4c0d",
+			"title": "Puede interactuar con cualquier objeto mientras esta en un interactionZone",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "17524403-ccda-4e55-bcd0-a55e617571e2",
+			"title": "Flashback",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "f7ddb161-4e50-49ab-9773-67f57068de4a",
+			"title": "Texturas de luces",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		},
+		{
+			"uuid": "c8fc82b1-a2eb-4038-904d-ae0e175c064e",
+			"title": "Menu Principal",
+			"description": "",
+			"category": "72d8f7a8-eb98-4071-a2c1-91d287b60ee8",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"7dd1c6f3-5f8d-4d3a-a44b-c8d5685b575b"
+			],
+			[
+				"dea612e1-89ba-4c3d-80f1-79840a53eee3"
+			],
+			[
+				"7948425f-c352-41dd-ad19-529cb7514273"
+			],
+			[
+				"a63eef1b-9523-45c8-baa4-da9608b17197"
+			],
+			[
+				"81b3e4c8-3baf-42c4-9f4c-767089d5a7c1"
+			]
+		]
+	}
+}
